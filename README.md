@@ -1,1 +1,1 @@
-"# FastGameLib" 
+# FastGameLib
