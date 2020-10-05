@@ -1,0 +1,27 @@
+var class_game =
+[
+    [ "Game", "class_game.html#a0f4075218e8a6b932200f4869d9e3314", null ],
+    [ "addClickable", "class_game.html#a6d75fb12353ae99d53860434b5504e84", null ],
+    [ "addScene", "class_game.html#ac7f4be1ef3064a328dcb4d3ab2332c85", null ],
+    [ "getClickables", "class_game.html#a97eba9c1649e6c8989eefb552f17baa9", null ],
+    [ "getFramerate", "class_game.html#adde73f357c9acbb6c22f4b852a71da31", null ],
+    [ "getResources", "class_game.html#a4e4876901d3284ae8778c52afa834d4d", null ],
+    [ "getScenes", "class_game.html#a60448d5b589c561642abaebe8618b661", null ],
+    [ "getVideoMode", "class_game.html#a16525e45e99c7e06469cb3100a24862d", null ],
+    [ "getWindow", "class_game.html#aa18721f98a70e1c8d3b0df51b4f493f9", null ],
+    [ "launch", "class_game.html#a35c46e76cde7773850820233754e0bc0", null ],
+    [ "setCurrentScene", "class_game.html#a61c3ed0c2ff004cdcbcc146445ca8d45", null ],
+    [ "setFramerate", "class_game.html#a67168cf45b2fae6b608f1ae02f6b71ee", null ],
+    [ "clickables", "class_game.html#a97643c4df348ee6ae95f8441c3b6bd64", null ],
+    [ "currentScene", "class_game.html#a415dd0b589349b878702963e43260c1d", null ],
+    [ "ev", "class_game.html#a0e54df902021fbf68140e4bee81ff369", null ],
+    [ "framerate", "class_game.html#a83d32474605f065c02e9311fd30be2fc", null ],
+    [ "framerateClock", "class_game.html#aacc3290cc7fffd608b267afa26142aae", null ],
+    [ "gameClock", "class_game.html#ac93a1599d25a3b67e429e62ec16380d0", null ],
+    [ "resources", "class_game.html#a42f015a9c62e7645e9585287f7459d56", null ],
+    [ "scenes", "class_game.html#a79fd641edd348ea4c7f446f29a6e1926", null ],
+    [ "updateClock", "class_game.html#a3964f1986dc686e10f9755791907cc31", null ],
+    [ "window", "class_game.html#a223de215aeb661cd423ac145756cc730", null ],
+    [ "windowMode", "class_game.html#a3bf10e5028c4f152edb36503e4e4cc41", null ],
+    [ "windowTitle", "class_game.html#a2d6b8d97faca4a5590086342d42d7907", null ]
+];
