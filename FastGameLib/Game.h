@@ -113,7 +113,7 @@ public:
 
 	/**
 	 * \public
-	 * \return A reference on the map of scenes.
+	 * \return A reference to the map Game::scenes.
 	 * \see Scene
 	 */
 	std::map<std::string, std::shared_ptr<Scene>>& getScenes();
@@ -129,34 +129,34 @@ public:
 	/**
 	 * \public
 	 * Adds a clickable object on the scene.
-	 * \param clickable A pointer on the clickable allocated with \c new.
+	 * \param clickable A pointer to the clickable allocated with \c new.
 	 * \see Clickable
 	 */
 	void addClickable(Clickable* clickable);
 
 	/**
 	 * \public
-	 * \return A reference on the map of clickables.
+	 * \return A reference to the map Game::clickables.
 	 * \see Clickable
 	 */
 	std::vector<std::shared_ptr<Clickable>>& getClickables();
 
 	/**
 	 * \public
-	 * \return A reference on the resource manager.
+	 * \return A reference to the Game::resources.
 	 * \see ResourceManager
 	 */
 	ResourceManager& getResources();
 
 	/**
 	 * \public
-	 * \return A reference on the main window.
+	 * \return A reference to the main window.
 	 */
 	sf::RenderWindow& getWindow();
 
 	/**
 	 * \public
-	 * \return A reference on the dimensions of the main window.
+	 * \return A reference to the dimensions of the main window.
 	 */
 	sf::VideoMode& getVideoMode();
 

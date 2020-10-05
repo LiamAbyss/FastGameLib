@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('class_resource_manager.html',''); init
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ResourceManager Class Reference</div>  </div>
@@ -95,6 +96,9 @@ $(document).ready(function(){initNavTree('class_resource_manager.html',''); init
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4608f5db5e74e7016d2518f6ea638e84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a4608f5db5e74e7016d2518f6ea638e84">load</a> (std::string key, std::string file)</td></tr>
 <tr class="separator:a4608f5db5e74e7016d2518f6ea638e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:a8d998c2edd81ba950e507e854b74c148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_resource_manager_8h.html#a734ec387d7e49fc58881ff36439d4f06">GVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a8d998c2edd81ba950e507e854b74c148">get</a> (std::string key)</td></tr>
 <tr class="separator:a8d998c2edd81ba950e507e854b74c148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54b1f5b1ae820692c68b93097a1cffab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_resource_manager_8h.html#a734ec387d7e49fc58881ff36439d4f06">GVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#a54b1f5b1ae820692c68b93097a1cffab">operator[]</a> (std::string key)</td></tr>
@@ -121,12 +125,17 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:afc2fcd0b102d47ab6b54cbd99b21c566"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_manager.html#afc2fcd0b102d47ab6b54cbd99b21c566">audioLimit</a> = 1000000</td></tr>
 <tr class="separator:afc2fcd0b102d47ab6b54cbd99b21c566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages all the resources. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game.html#a42f015a9c62e7645e9585287f7459d56">Game::resources</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8d998c2edd81ba950e507e854b74c148"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d998c2edd81ba950e507e854b74c148">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="_resource_manager_8h.html#a734ec387d7e49fc58881ff36439d4f06">GVariant</a> ResourceManager::get </td>
@@ -136,7 +145,20 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key associated to the resource. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A boost::variant of std::shared_ptr according to the resource type. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_resource_manager_8h.html#ac542a155f3ed330b721399c946e449ac">GTexture</a>, <a class="el" href="_resource_manager_8h.html#a19122791b885df9c03abfb6a77a67507">GSoundBuffer</a>, <a class="el" href="_resource_manager_8h.html#ac83eb16bf76189f8e7e37aa15228d146">GMusic</a>, <a class="el" href="_resource_manager_8h.html#a4b66d70ec70421598a75e77eed330de9">GJson</a>, <a class="el" href="_resource_manager_8h.html#a4ffcf6a92fc43442ee26ab8a6d116014">GFont</a>, <a class="el" href="_resource_manager_8h.html#a734ec387d7e49fc58881ff36439d4f06">GVariant</a> </dd></dl>
 
 </div>
 </div>
@@ -145,6 +167,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">unsigned long long ResourceManager::getAudioLimit </td>
@@ -153,7 +178,13 @@ Private Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The limit in size between SFML SoundBuffers and Musics. </dd></dl>
 
 </div>
 </div>
@@ -182,6 +213,17 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loads a resource. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key associated to the resource. </td></tr>
+    <tr><td class="paramname">file</td><td>The file where the resource is located. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the file could be loaded. </dd>
+<dd>
+false If the file doesn't exist or if the extension is not supported. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Currently supported : Audio and image files supported by SFML, JSON files, and font files (.ttf) </dd></dl>
 
 </div>
 </div>
@@ -190,6 +232,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="_resource_manager_8h.html#a734ec387d7e49fc58881ff36439d4f06">GVariant</a> ResourceManager::operator[] </td>
@@ -199,7 +244,20 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key associated to the resource. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A boost::variant of std::shared_ptr according to the resource type. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_resource_manager.html#a8d998c2edd81ba950e507e854b74c148">get()</a> </dd></dl>
 
 </div>
 </div>
@@ -208,6 +266,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ResourceManager::remove </td>
@@ -217,7 +278,18 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key associated to the resource. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -226,6 +298,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ResourceManager::setAudioLimit </td>
@@ -235,7 +310,18 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limit</td><td>The limit in size between SFML SoundBuffers and Musics. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -259,6 +345,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The limit in size between SFML SoundBuffers and Musics. </p><dl class="section note"><dt>Note</dt><dd>SoundBuffers are loaded into the memory while Musics are streamed directly from their file. </dd></dl>
 
 </div>
 </div>
@@ -281,6 +368,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Contains all the SFML fonts. </p>
 
 </div>
 </div>
@@ -303,6 +391,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Contains all the json files. </p>
 
 </div>
 </div>
@@ -325,6 +414,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Contains all the SFML Musics. </p>
 
 </div>
 </div>
@@ -347,6 +437,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Contains all the SFML SoundBuffers. </p>
 
 </div>
 </div>
@@ -369,6 +460,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Contains all the SFML Textures. </p>
 
 </div>
 </div>

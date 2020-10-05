@@ -113,7 +113,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a9dda0d6a84c286d63134bf1ba27b20c8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a9dda0d6a84c286d63134bf1ba27b20c8">scenes</a></td></tr>
 <tr class="separator:a9dda0d6a84c286d63134bf1ba27b20c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A pure virtual class of a game scene. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a881eaef4995c362b00034ebb32449341"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a881eaef4995c362b00034ebb32449341">&#9670;&nbsp;</a></span>initialize()</h2>
 
@@ -136,6 +138,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initializer to load resources, show loading animations etc... </p>
 
 </div>
 </div>
@@ -161,6 +164,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_game.html">Game</a> loop in which all the rendering is done. </p>
 
 </div>
 </div>
@@ -179,6 +183,14 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Used in <a class="el" href="class_game.html#ac7f4be1ef3064a328dcb4d3ab2332c85">Game::addScene()</a> to initialize the protected attributes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>A pointer to the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game.html">Game</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You should not call this method yourself. </dd></dl>
 
 </div>
 </div>
@@ -215,6 +227,13 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_game.html">Game</a> loop in which all the processing is done. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>The time passed since last update. </td></tr>
+    <tr><td class="paramname">ev</td><td>The SFML event for the main window. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -238,6 +257,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>A pointer to the game. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game.html">Game</a> </dd></dl>
 
 </div>
 </div>
@@ -260,6 +280,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>A pointer to the resource manager. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_resource_manager.html">ResourceManager</a> </dd></dl>
 
 </div>
 </div>
@@ -282,6 +303,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>A pointer to the map of game scenes. </p>
 
 </div>
 </div>
@@ -304,6 +326,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>A pointer to the main window. </p>
 
 </div>
 </div>
