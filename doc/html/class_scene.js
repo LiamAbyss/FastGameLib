@@ -6,6 +6,5 @@ var class_scene =
     [ "update", "class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812", null ],
     [ "game", "class_scene.html#a7ef6645b60a406260b513cf200bc6c40", null ],
     [ "resources", "class_scene.html#a1ca2b1b949f597c37703bdb2041c3043", null ],
-    [ "scenes", "class_scene.html#a9dda0d6a84c286d63134bf1ba27b20c8", null ],
     [ "window", "class_scene.html#a0154fc93c1653154461a19a3209914a3", null ]
 ];

@@ -32,12 +32,6 @@ protected:
 	 */
 	sf::RenderWindow* window;
 
-	/** 
-	 * \protected
-	 * A pointer to the map of game scenes.
-	 */
-	std::map<std::string, std::shared_ptr<Scene>>* scenes;
-
 public:
 
 	/**

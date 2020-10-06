@@ -5,5 +5,6 @@ var searchData=
   ['onrelease_83',['ONRELEASE',['../_clickable_8h.html#a3e71efb7e3fbb841f97c19c54225826aabd5b76975c253315d7be2ec99613d992',1,'Clickable.h']]],
   ['onsegment_84',['onSegment',['../_hitbox_8cpp.html#a5f5cfb5a4c47fe38e6b26c30b4a68151',1,'Hitbox.cpp']]],
   ['operator_5b_5d_85',['operator[]',['../class_resource_manager.html#a54b1f5b1ae820692c68b93097a1cffab',1,'ResourceManager']]],
-  ['orientation_86',['orientation',['../_hitbox_8cpp.html#ab4412cc7e7de0c28794f84782397a354',1,'Hitbox.cpp']]]
+  ['orientation_86',['orientation',['../_hitbox_8cpp.html#ab4412cc7e7de0c28794f84782397a354',1,'Hitbox.cpp']]],
+  ['over_87',['OVER',['../_clickable_8h.html#a3e71efb7e3fbb841f97c19c54225826aa1bb417e796672d15256a5b51d9b554ae',1,'Clickable.h']]]
 ];

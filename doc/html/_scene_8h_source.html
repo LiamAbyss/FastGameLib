@@ -102,29 +102,26 @@ $(document).ready(function(){initNavTree('_scene_8h_source.html',''); initResiza
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_scene.html#a0154fc93c1653154461a19a3209914a3">   33</a></span>&#160;    sf::RenderWindow* <a class="code" href="class_scene.html#a0154fc93c1653154461a19a3209914a3">window</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_scene.html#a9dda0d6a84c286d63134bf1ba27b20c8">   39</a></span>&#160;    std::map&lt;std::string, std::shared_ptr&lt;Scene&gt;&gt;* <a class="code" href="class_scene.html#a9dda0d6a84c286d63134bf1ba27b20c8">scenes</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">setGame</a>(<a class="code" href="class_game.html">Game</a>* <a class="code" href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">game</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">setGame</a>(<a class="code" href="class_game.html">Game</a>* <a class="code" href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">game</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_scene.html#a881eaef4995c362b00034ebb32449341">   50</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize</a>() = 0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_scene.html#a881eaef4995c362b00034ebb32449341">   56</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize</a>() = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">   64</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">update</a>(sf::Time dt, sf::Event&amp; ev) = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">   70</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">render</a>() = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // !INCLUDE_SCENE</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">   58</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">update</a>(sf::Time dt, sf::Event&amp; ev) = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">   64</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">render</a>() = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // !INCLUDE_SCENE</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_scene_html_a7dd380896c2aae26dc8369eb5dfd7bfb"><div class="ttname"><a href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">Scene::setGame</a></div><div class="ttdeci">void setGame(Game *game)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:3</div></div>
 <div class="ttc" id="a_game_8h_html"><div class="ttname"><a href="_game_8h.html">Game.h</a></div></div>
-<div class="ttc" id="aclass_scene_html_a9dda0d6a84c286d63134bf1ba27b20c8"><div class="ttname"><a href="class_scene.html#a9dda0d6a84c286d63134bf1ba27b20c8">Scene::scenes</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; Scene &gt; &gt; * scenes</div><div class="ttdef"><b>Definition:</b> Scene.h:39</div></div>
 <div class="ttc" id="aclass_scene_html_a1ca2b1b949f597c37703bdb2041c3043"><div class="ttname"><a href="class_scene.html#a1ca2b1b949f597c37703bdb2041c3043">Scene::resources</a></div><div class="ttdeci">ResourceManager * resources</div><div class="ttdef"><b>Definition:</b> Scene.h:27</div></div>
 <div class="ttc" id="aclass_scene_html_a0154fc93c1653154461a19a3209914a3"><div class="ttname"><a href="class_scene.html#a0154fc93c1653154461a19a3209914a3">Scene::window</a></div><div class="ttdeci">sf::RenderWindow * window</div><div class="ttdef"><b>Definition:</b> Scene.h:33</div></div>
-<div class="ttc" id="aclass_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdef"><b>Definition:</b> ResourceManager.h:27</div></div>
+<div class="ttc" id="aclass_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdef"><b>Definition:</b> ResourceManager.h:25</div></div>
 <div class="ttc" id="aclass_scene_html_a7ef6645b60a406260b513cf200bc6c40"><div class="ttname"><a href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">Scene::game</a></div><div class="ttdeci">Game * game</div><div class="ttdef"><b>Definition:</b> Scene.h:20</div></div>
 <div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.h:12</div></div>
 <div class="ttc" id="aclass_scene_html_ac04d81228fc8f347bb9bc10d5d6d6812"><div class="ttname"><a href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">Scene::update</a></div><div class="ttdeci">virtual void update(sf::Time dt, sf::Event &amp;ev)=0</div></div>

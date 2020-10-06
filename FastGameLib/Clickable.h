@@ -4,12 +4,19 @@
 #include <SFML/Graphics.hpp>
 #include "Hitbox.h"
 
+/** 
+ * Click types for Clickable::clickTypes
+ */
 enum class ClickType
 {
 	ONDOWN = 0,
-	ONRELEASE = 1
+	ONRELEASE = 1,
+	OVER = 2
 };
 
+/**
+ * MouseButtons for Clickable::mouseButtons
+ */
 enum class MouseButton
 {
 	LEFT = sf::Mouse::Left,

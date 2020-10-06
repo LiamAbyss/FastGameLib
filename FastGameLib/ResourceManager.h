@@ -3,11 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include <Thor/Resources.hpp>
 #include <string>
 #include "JsonHeader/json.hpp"
 #include <boost/variant.hpp>
-#include <regex>
 #include <iostream>
 #include <Windows.h>
 #include <fstream>
