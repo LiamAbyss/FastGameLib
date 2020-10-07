@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jsonholder_228',['jsonHolder',['../class_resource_manager.html#a5e634ff02e2951b4058487a22d2c6ab7',1,'ResourceManager']]]
+  ['initialized_233',['initialized',['../class_scene.html#a5b9c0375ba50d6f3f7e83d983088ac08',1,'Scene']]]
 ];

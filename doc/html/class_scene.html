@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('class_scene.html',''); initResizable()
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dd380896c2aae26dc8369eb5dfd7bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">setGame</a> (<a class="el" href="class_game.html">Game</a> *<a class="el" href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">game</a>)</td></tr>
 <tr class="separator:a7dd380896c2aae26dc8369eb5dfd7bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f75789e236a8262a8826bb21efc060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a55f75789e236a8262a8826bb21efc060">setInitialized</a> (bool init)</td></tr>
+<tr class="separator:a55f75789e236a8262a8826bb21efc060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a881eaef4995c362b00034ebb32449341"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize</a> ()=0</td></tr>
 <tr class="separator:a881eaef4995c362b00034ebb32449341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04d81228fc8f347bb9bc10d5d6d6812"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">update</a> (sf::Time dt, sf::Event &amp;ev)=0</td></tr>
@@ -110,6 +112,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a1ca2b1b949f597c37703bdb2041c3043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0154fc93c1653154461a19a3209914a3"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a0154fc93c1653154461a19a3209914a3">window</a></td></tr>
 <tr class="separator:a0154fc93c1653154461a19a3209914a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9c0375ba50d6f3f7e83d983088ac08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5b9c0375ba50d6f3f7e83d983088ac08">initialized</a> = false</td></tr>
+<tr class="separator:a5b9c0375ba50d6f3f7e83d983088ac08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pure virtual class of a game scene. </p>
@@ -192,6 +196,24 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a55f75789e236a8262a8826bb21efc060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f75789e236a8262a8826bb21efc060">&#9670;&nbsp;</a></span>setInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::setInitialized </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>init</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac04d81228fc8f347bb9bc10d5d6d6812"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac04d81228fc8f347bb9bc10d5d6d6812">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -256,6 +278,28 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>A pointer to the game. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game.html">Game</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5b9c0375ba50d6f3f7e83d983088ac08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9c0375ba50d6f3f7e83d983088ac08">&#9670;&nbsp;</a></span>initialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::initialized = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

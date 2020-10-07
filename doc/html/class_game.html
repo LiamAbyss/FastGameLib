@@ -109,8 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4e4876901d3284ae8778c52afa834d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18721f98a70e1c8d3b0df51b4f493f9"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa18721f98a70e1c8d3b0df51b4f493f9">getWindow</a> ()</td></tr>
 <tr class="separator:aa18721f98a70e1c8d3b0df51b4f493f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16525e45e99c7e06469cb3100a24862d"><td class="memItemLeft" align="right" valign="top">sf::VideoMode &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a16525e45e99c7e06469cb3100a24862d">getVideoMode</a> ()</td></tr>
-<tr class="separator:a16525e45e99c7e06469cb3100a24862d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1348109cb78d8fe8284e0e13e920f0"><td class="memItemLeft" align="right" valign="top">sf::VideoMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a0a1348109cb78d8fe8284e0e13e920f0">getVideoMode</a> ()</td></tr>
+<tr class="separator:a0a1348109cb78d8fe8284e0e13e920f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bf9ba56613d60fd976883da3a79f18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab1bf9ba56613d60fd976883da3a79f18">setVideoMode</a> (sf::VideoMode mode, sf::Uint32 style=7U)</td></tr>
+<tr class="separator:ab1bf9ba56613d60fd976883da3a79f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adde73f357c9acbb6c22f4b852a71da31"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#adde73f357c9acbb6c22f4b852a71da31">getFramerate</a> ()</td></tr>
 <tr class="separator:adde73f357c9acbb6c22f4b852a71da31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67168cf45b2fae6b608f1ae02f6b71ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a67168cf45b2fae6b608f1ae02f6b71ee">setFramerate</a> (unsigned short rate)</td></tr>
@@ -327,14 +329,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a16525e45e99c7e06469cb3100a24862d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16525e45e99c7e06469cb3100a24862d">&#9670;&nbsp;</a></span>getVideoMode()</h2>
+<a id="a0a1348109cb78d8fe8284e0e13e920f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1348109cb78d8fe8284e0e13e920f0">&#9670;&nbsp;</a></span>getVideoMode()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sf::VideoMode &amp; Game::getVideoMode </td>
+          <td class="memname">sf::VideoMode Game::getVideoMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -424,6 +426,40 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rate</td><td>The maximum framerate of the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab1bf9ba56613d60fd976883da3a79f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1bf9ba56613d60fd976883da3a79f18">&#9670;&nbsp;</a></span>setVideoMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::setVideoMode </td>
+          <td>(</td>
+          <td class="paramtype">sf::VideoMode&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Uint32&#160;</td>
+          <td class="paramname"><em>style</em> = <code>7U</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>New video mode. </td></tr>
   </table>
   </dd>
 </dl>

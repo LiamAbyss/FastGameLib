@@ -29,7 +29,7 @@ var searchData=
   ['getstart_49',['getStart',['../class_hitbox.html#aa8500b11243af973ac652567707a9842',1,'Hitbox']]],
   ['gettop_50',['getTop',['../class_hitbox.html#af8d8f603237b94698ad7a3c36d360ee0',1,'Hitbox']]],
   ['gettype_51',['getType',['../class_hitbox.html#ad90e13aa38af7739cfae6d1dd1604670',1,'Hitbox']]],
-  ['getvideomode_52',['getVideoMode',['../class_game.html#a16525e45e99c7e06469cb3100a24862d',1,'Game']]],
+  ['getvideomode_52',['getVideoMode',['../class_game.html#a0a1348109cb78d8fe8284e0e13e920f0',1,'Game']]],
   ['getwindow_53',['getWindow',['../class_game.html#aa18721f98a70e1c8d3b0df51b4f493f9',1,'Game']]],
   ['gfont_54',['GFont',['../_resource_manager_8h.html#a4ffcf6a92fc43442ee26ab8a6d116014',1,'ResourceManager.h']]],
   ['gjson_55',['GJson',['../_resource_manager_8h.html#a4b66d70ec70421598a75e77eed330de9',1,'ResourceManager.h']]],
