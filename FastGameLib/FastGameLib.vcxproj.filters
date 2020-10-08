@@ -42,6 +42,9 @@
     <ClCompile Include="Hitbox.cpp">
       <Filter>GameUtils</Filter>
     </ClCompile>
+    <ClCompile Include="TransparentWindow.cpp">
+      <Filter>GameUtils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ResourceManager.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="JsonHeader\json.hpp">
       <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TransparentWindow.h">
+      <Filter>GameUtils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
