@@ -37,6 +37,8 @@ class TestScene : public Scene
 		c->setActiveHitbox("test");
 		Hitbox& cHitbox = c->hitboxes["test"][0];
 		cHitbox.setSize(sf::Vector2f(300, 100));
+		cHitbox.setScale(sf::Vector2f(0.5, 2));
+		cHitbox.rotate(-20);
 
 		c->r.setSize(cHitbox.getSize());
 		c->r.setFillColor(sf::Color::Red);
@@ -52,7 +54,7 @@ class TestScene : public Scene
 	}
 	virtual void render() override
 	{
-		window->draw(c->r);
+		c->renderHitboxes(*window);
 	}
 };*/
 
