@@ -45,6 +45,9 @@
     <ClCompile Include="TransparentWindow.cpp">
       <Filter>GameUtils</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ResourceManager.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="TransparentWindow.h">
       <Filter>GameUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
