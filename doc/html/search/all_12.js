@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['window_129',['window',['../class_clickable.html#a26490f3c2155c74798f4e094554b0d0d',1,'Clickable::window()'],['../class_game.html#a223de215aeb661cd423ac145756cc730',1,'Game::window()'],['../class_scene.html#a0154fc93c1653154461a19a3209914a3',1,'Scene::window()']]],
-  ['windowmode_130',['windowMode',['../class_game.html#a3bf10e5028c4f152edb36503e4e4cc41',1,'Game']]],
-  ['windowtitle_131',['windowTitle',['../class_game.html#a2d6b8d97faca4a5590086342d42d7907',1,'Game']]]
+  ['update_149',['update',['../class_camera.html#ad2e31aab41bec14f16c3b547b9ce1b92',1,'Camera::update()'],['../class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812',1,'Scene::update(sf::Time dt, sf::Event &amp;ev)=0'],['../class_scene.html#a85ba5d5098a2ae93a80edae29ee6294e',1,'Scene::update(sf::Time dt)=0']]],
+  ['updateclock_150',['updateClock',['../class_game.html#a3964f1986dc686e10f9755791907cc31',1,'Game']]]
 ];

@@ -84,11 +84,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>addClickable()
-: <a class="el" href="class_game.html#a6d75fb12353ae99d53860434b5504e84">Game</a>
-</li>
 <li>addScene()
-: <a class="el" href="class_game.html#ac7f4be1ef3064a328dcb4d3ab2332c85">Game</a>
+: <a class="el" href="class_game.html#aee09cfc57c5325c35fbcef103e4ea98d">Game</a>
+</li>
+<li>areHitboxesFlipped()
+: <a class="el" href="class_hitboxed.html#a3863ec7da0becb759069d7a6f5203da1">Hitboxed</a>
 </li>
 </ul>
 
@@ -102,17 +102,26 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>flip()
-: <a class="el" href="class_hitbox.html#ac5aa3f4e12a71781148f51675bc8cca2">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a32c301f45cdf5cd6ce9fcacd54f06930">Hitbox</a>
+</li>
+<li>flipHitboxes()
+: <a class="el" href="class_hitboxed.html#a9827ddce8bb03a9785ffc374c3dfc202">Hitboxed</a>
 </li>
 </ul>
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>Game()
-: <a class="el" href="class_game.html#a0f4075218e8a6b932200f4869d9e3314">Game</a>
+: <a class="el" href="class_game.html#a1b5bf5627dc569f2d8e8bf73af0ee375">Game</a>
 </li>
 <li>get()
-: <a class="el" href="class_resource_manager.html#a8d998c2edd81ba950e507e854b74c148">ResourceManager</a>
+: <a class="el" href="class_resource_manager.html#ad5083fc43e2df8f378703975b28c9ace">ResourceManager</a>
+</li>
+<li>getActiveHitboxes()
+: <a class="el" href="class_hitboxed.html#ae9e079ec154172a94bf2623aae9f4ca0">Hitboxed</a>
+</li>
+<li>getActiveHitboxName()
+: <a class="el" href="class_hitboxed.html#ad98ab3d42a998024a941e38b7cbb8019">Hitboxed</a>
 </li>
 <li>getAnchor()
 : <a class="el" href="class_hitbox.html#ac889f91db4491a989b5038001ad51456">Hitbox</a>
@@ -126,8 +135,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>getBottom()
 : <a class="el" href="class_hitbox.html#ac5a084bdbf9a3f9bacd4eade2d03c7e1">Hitbox</a>
 </li>
-<li>getClickables()
-: <a class="el" href="class_game.html#a97eba9c1649e6c8989eefb552f17baa9">Game</a>
+<li>getCamera()
+: <a class="el" href="class_game.html#a085c66356ae270769f4c23ef00a52e44">Game</a>
 </li>
 <li>getClickTypes()
 : <a class="el" href="class_clickable.html#a767b69abae5a87d5b61b22009ffce0d4">Clickable</a>
@@ -135,17 +144,24 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>getEnd()
 : <a class="el" href="class_hitbox.html#aecb649eebc177d83e4e89747ea2b49c1">Hitbox</a>
 </li>
+<li>getEvent()
+: <a class="el" href="class_game.html#a6dbcfeb68a8f9d2ca86e953e613321d9">Game</a>
+</li>
 <li>getFlipped()
 : <a class="el" href="class_hitbox.html#a58280582fb93d4252f85ad9eccefee03">Hitbox</a>
 </li>
 <li>getFramerate()
-: <a class="el" href="class_game.html#adde73f357c9acbb6c22f4b852a71da31">Game</a>
+: <a class="el" href="class_game.html#ad4222459e4ca3fd1d0794e2223618a1e">Game</a>
+</li>
+<li>getGame()
+: <a class="el" href="class_scene.html#ae5afaadd288e14b90c7c90752d3392fc">Scene</a>
 </li>
 <li>getGlobalPos()
 : <a class="el" href="class_hitbox.html#a6efc1449cb3caeff572b8b1a549c344f">Hitbox</a>
 </li>
 <li>getHitboxes()
-: <a class="el" href="class_hitbox.html#ad1e53314614d5bcd7f633b68a46971e6">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a833b9c4171a4fff5aff6f3f3c91ac5f5">Hitbox</a>
+, <a class="el" href="class_hitboxed.html#a21b082d612a109a5a0d1c76f36c3e26e">Hitboxed</a>
 </li>
 <li>getLabel()
 : <a class="el" href="class_hitbox.html#a290734ecb385b0f4fdc2116a5770ce78">Hitbox</a>
@@ -161,9 +177,13 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>getResources()
 : <a class="el" href="class_game.html#a4e4876901d3284ae8778c52afa834d4d">Game</a>
+, <a class="el" href="class_scene.html#a2f727a2638448a792d8bbdfd2b74a115">Scene</a>
 </li>
 <li>getRight()
 : <a class="el" href="class_hitbox.html#ab53f306798d93a5fe775b0f9af8afa11">Hitbox</a>
+</li>
+<li>getScale()
+: <a class="el" href="class_hitbox.html#a8ed00cd2faa5972d6c60466261e2d455">Hitbox</a>
 </li>
 <li>getScenes()
 : <a class="el" href="class_game.html#a60448d5b589c561642abaebe8618b661">Game</a>
@@ -181,10 +201,20 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="class_hitbox.html#ad90e13aa38af7739cfae6d1dd1604670">Hitbox</a>
 </li>
 <li>getVideoMode()
-: <a class="el" href="class_game.html#a0a1348109cb78d8fe8284e0e13e920f0">Game</a>
+: <a class="el" href="class_game.html#a0616f2408371bbe3c41bc2f0ec68a9b9">Game</a>
 </li>
 <li>getWindow()
-: <a class="el" href="class_game.html#aa18721f98a70e1c8d3b0df51b4f493f9">Game</a>
+: <a class="el" href="class_camera.html#abdf69e3c3124d81305cad3842e1e5726">Camera</a>
+, <a class="el" href="class_clickable.html#ade7152736557b9f3039c875b3ca6b444">Clickable</a>
+, <a class="el" href="class_game.html#aa18721f98a70e1c8d3b0df51b4f493f9">Game</a>
+, <a class="el" href="class_scene.html#a533b69e02606bc3bfb0958a181676645">Scene</a>
+</li>
+</ul>
+
+
+<h3><a id="index_h"></a>- h -</h3><ul>
+<li>hasBeenInitialized()
+: <a class="el" href="class_scene.html#a040bda08c640d5d488c960bdbf761b0f">Scene</a>
 </li>
 </ul>
 
@@ -196,8 +226,14 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>isClicked()
 : <a class="el" href="class_clickable.html#aeb6f5c2f59b50841d5167ffd5d8f9cb5">Clickable</a>
 </li>
+<li>isHovered()
+: <a class="el" href="class_clickable.html#aa63d6d6d3094476883e5e4e12aa9f6ff">Clickable</a>
+</li>
 <li>isOver()
-: <a class="el" href="class_hitbox.html#a1d1e7631f8058cdf181ebc37573ffb6e">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a1b9826c8a15cbbcd1819ab0dc21a835b">Hitbox</a>
+</li>
+<li>isPointInHitbox()
+: <a class="el" href="class_hitbox.html#ad91786f704be02b5662950ee1a1d9731">Hitbox</a>
 </li>
 </ul>
 
@@ -207,31 +243,28 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="class_game.html#a35c46e76cde7773850820233754e0bc0">Game</a>
 </li>
 <li>load()
-: <a class="el" href="class_resource_manager.html#a4608f5db5e74e7016d2518f6ea638e84">ResourceManager</a>
+: <a class="el" href="class_resource_manager.html#a89b8102f6bc08645f6a59fe0332e3f34">ResourceManager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>moveHitboxes()
-: <a class="el" href="class_hitboxed.html#a45eeb395861906fadb0593bf3d3b88b1">Hitboxed</a>
+: <a class="el" href="class_hitboxed.html#afb8dd451284aa50513a479ade7c47a64">Hitboxed</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
-<li>onClick()
-: <a class="el" href="class_clickable.html#acca4d6b65870bc2939b4ccb488aaa1c5">Clickable</a>
-</li>
 <li>operator[]()
-: <a class="el" href="class_resource_manager.html#a54b1f5b1ae820692c68b93097a1cffab">ResourceManager</a>
+: <a class="el" href="class_resource_manager.html#a6bf69a236c5ec8c424c7200b8a5cb64f">ResourceManager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>remove()
-: <a class="el" href="class_resource_manager.html#a5cd0386cc0efed2294293307766054b8">ResourceManager</a>
+: <a class="el" href="class_resource_manager.html#aa14000505e45ccf4055f5c4e9505759d">ResourceManager</a>
 </li>
 <li>render()
 : <a class="el" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">Scene</a>
@@ -250,7 +283,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>setActiveHitbox()
-: <a class="el" href="class_hitboxed.html#a884e111e5eb68a005bf058f6465be353">Hitboxed</a>
+: <a class="el" href="class_hitboxed.html#aff06a516f0ce84a1cbd88de4c894a8c2">Hitboxed</a>
 </li>
 <li>setAngle()
 : <a class="el" href="class_hitbox.html#a39d68990c00e90d959df58c66a4a890d">Hitbox</a>
@@ -262,50 +295,77 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="class_resource_manager.html#a1454cb62fa8a33d9f5f7e7080538cda4">ResourceManager</a>
 </li>
 <li>setCurrentScene()
-: <a class="el" href="class_game.html#a61c3ed0c2ff004cdcbcc146445ca8d45">Game</a>
+: <a class="el" href="class_game.html#a7642992c59d1a9b226b37a84a60f6d08">Game</a>
 </li>
 <li>setEvent()
-: <a class="el" href="class_clickable.html#a038c7a9dc91b5fed2dd87c21f85d6e5d">Clickable</a>
+: <a class="el" href="class_clickable.html#a7d4b3d8e972961c23dc602b2bf29e0b4">Clickable</a>
 </li>
 <li>setFramerate()
 : <a class="el" href="class_game.html#a67168cf45b2fae6b608f1ae02f6b71ee">Game</a>
 </li>
 <li>setGame()
-: <a class="el" href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">Scene</a>
+: <a class="el" href="class_scene.html#a313acb1af95a2d3bde0fb9ac386bdde5">Scene</a>
+</li>
+<li>setHitboxes()
+: <a class="el" href="class_hitboxed.html#ac5730de7f2e81bc007a1bc0f2008f46f">Hitboxed</a>
 </li>
 <li>setInitialized()
 : <a class="el" href="class_scene.html#a55f75789e236a8262a8826bb21efc060">Scene</a>
 </li>
 <li>setPos()
-: <a class="el" href="class_hitbox.html#ab147cf4ce4046cd0db568a77ba564a04">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a71b21274b6f5318e59052d205bcc7847">Hitbox</a>
 </li>
 <li>setPosHitboxes()
-: <a class="el" href="class_hitboxed.html#a59a4488c652f34aef13dd63ddfd04ce8">Hitboxed</a>
+: <a class="el" href="class_hitboxed.html#a7c03e338a28288bf21b346d4433d054b">Hitboxed</a>
+</li>
+<li>setScale()
+: <a class="el" href="class_hitbox.html#ae27af7229897c1e275d3e1196fb952cd">Hitbox</a>
+</li>
+<li>setScaleHitboxes()
+: <a class="el" href="class_hitboxed.html#adc34314aca5ecb73909a81b1116915c0">Hitboxed</a>
 </li>
 <li>setSize()
-: <a class="el" href="class_hitbox.html#acaddf41d87bce4c0610c9ef72d6d4ba3">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a1f4fa8b99ddf279941dfc235c3c6d7c7">Hitbox</a>
 </li>
 <li>setType()
-: <a class="el" href="class_hitbox.html#a16d32f3cae6582b251950921540bd097">Hitbox</a>
+: <a class="el" href="class_hitbox.html#afa66470133a72cbc4092941ec135279f">Hitbox</a>
 </li>
 <li>setVideoMode()
 : <a class="el" href="class_game.html#ab1bf9ba56613d60fd976883da3a79f18">Game</a>
 </li>
 <li>setWindow()
-: <a class="el" href="class_clickable.html#a24f8f7f44cdaaab47f6ac8c815e296c2">Clickable</a>
+: <a class="el" href="class_camera.html#a8bc2bd1d516e5401d11e627626c021df">Camera</a>
+, <a class="el" href="class_clickable.html#abf5a124aed76b870410846bb07668194">Clickable</a>
+</li>
+<li>setWShape()
+: <a class="el" href="class_game.html#a0a0a73814f7530acd964362e9bce158c">Game</a>
+</li>
+<li>setWTransparency()
+: <a class="el" href="class_game.html#a94c3d7448b77ccf2eba5607cd02f2e5c">Game</a>
 </li>
 <li>setX()
-: <a class="el" href="class_hitbox.html#a92160f026353728d3459b1198ffe6d33">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a7286362bfdccd03d8ba0b61101339a55">Hitbox</a>
 </li>
 <li>setY()
-: <a class="el" href="class_hitbox.html#af1a23180ef987a68c6b21d99578bc9f0">Hitbox</a>
+: <a class="el" href="class_hitbox.html#a00c9e1968cc1ef7ec1e6c4039716abe6">Hitbox</a>
+</li>
+<li>shake()
+: <a class="el" href="class_camera.html#ab3b06cba79b741d4ae6cc28ab9265489">Camera</a>
 </li>
 </ul>
 
 
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>update()
-: <a class="el" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">Scene</a>
+: <a class="el" href="class_camera.html#ad2e31aab41bec14f16c3b547b9ce1b92">Camera</a>
+, <a class="el" href="class_scene.html#a85ba5d5098a2ae93a80edae29ee6294e">Scene</a>
+</li>
+</ul>
+
+
+<h3><a id="index__7E"></a>- ~ -</h3><ul>
+<li>~Scene()
+: <a class="el" href="class_scene.html#af6e09d91ebd10ae9cc7c12c39d06386c">Scene</a>
 </li>
 </ul>
 </div><!-- contents -->

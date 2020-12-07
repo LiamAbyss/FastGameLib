@@ -3,10 +3,20 @@
 #include <SFML/Graphics.hpp>
 
 #if defined (SFML_SYSTEM_WINDOWS)
-#include <windows.h>
+#include <Windows.h>
 
+/**
+* Sets the shape of the window according to an image with transparent parts
+* \param hWnd The window handle
+* \param image The image to shape the window
+*/
 bool setWShape(HWND hWnd, const sf::Image& image);
 
+/** 
+ * Sets the transparency of the window
+ * \param hWnd The window handle
+ * \param alpha the opacity (0-255)
+ */
 bool setWTransparency(HWND hWnd, unsigned char alpha);
 
 #elif defined (SFML_SYSTEM_LINUX)

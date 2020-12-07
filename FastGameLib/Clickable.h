@@ -10,8 +10,7 @@
 enum class ClickType
 {
 	ONDOWN = 0,
-	ONRELEASE = 1,
-	OVER = 2
+	ONRELEASE = 1
 };
 
 /**
@@ -29,28 +28,28 @@ enum class MouseButton
  */
 class Clickable : public Hitboxed
 {
-protected:
+private:
 
 	/** 
-	 * \protected
+	 * \private
 	 * A pointer to the main window.
 	 */
 	sf::RenderWindow* window;
 
 	/** 
-	 * \protected
+	 * \private
 	 * A pointer to the event of the main window.
 	 */
 	sf::Event* ev;
 
 	/** 
-	 * \protected
+	 * \private
 	 * A vector containing the click types for which to react to.
 	 */
 	std::vector<ClickType> clickTypes = std::vector<ClickType>(1, ClickType::ONRELEASE);
 
 	/** 
-	 * \protected
+	 * \private
 	 * A vector containing the mouse buttons for which to react to.
 	 */
 	std::vector<MouseButton> mouseButtons = std::vector<MouseButton>(1, MouseButton::LEFT);
@@ -62,15 +61,15 @@ public:
 	 * \public
 	 * \return true If the clickable is clicked.
 	 * \return false Otherwise.
-	 * \note You should not call this method yourself.
 	 */
 	bool isClicked();
 
-	/** 
+	/**
 	 * \public
-	 * Method to call when the clickable is clicked.
+	 * \return true If the clickable is hovered. 
+	 * \return false Otherwise.
 	 */
-	virtual void onClick() = 0;
+	bool isHovered();
 
 	/**
 	 * \public
@@ -78,7 +77,9 @@ public:
 	 * \param window A pointer to the main window.
 	 * \note You should not call this method yourself.
 	 */
-	void setWindow(sf::RenderWindow* window);
+	void setWindow(sf::RenderWindow * gameWindow);
+
+	sf::RenderWindow& getWindow();
 
 	/**
 	 * \public
@@ -86,7 +87,7 @@ public:
 	 * \param ev A pointer to the event of the main window.
 	 * \note You should not call this method yourself.
 	 */
-	void setEvent(sf::Event* ev);
+	void setEvent(sf::Event * gameEvent);
 
 	/**
 	 * \public

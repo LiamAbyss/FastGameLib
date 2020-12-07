@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['m_5fpi_267',['M_PI',['../_hitbox_8h.html#ae71449b1cc6e6250b91f539153a7a0d3',1,'Hitbox.h']]]
+  ['include_5fcamera_313',['INCLUDE_CAMERA',['../_camera_8h.html#acfd3f595897c95c1e6d8ade517c3cab5',1,'Camera.h']]]
 ];

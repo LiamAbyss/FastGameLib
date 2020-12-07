@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "Camera", "class_camera.html", "class_camera" ],
     [ "Clickable", "class_clickable.html", "class_clickable" ],
     [ "Game", "class_game.html", "class_game" ],
     [ "Hitbox", "class_hitbox.html", "class_hitbox" ],

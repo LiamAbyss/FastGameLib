@@ -3,7 +3,7 @@
 std::string GetMimeType(const std::string& szExtension)
 {
 	// return mime type for extension
-	HKEY hKey = NULL;
+	HKEY hKey = nullptr;
 	std::string szResult = "application/unknown";
 
 	// open registry key
@@ -15,7 +15,7 @@ std::string GetMimeType(const std::string& szExtension)
 		DWORD dwBuffSize = sizeof(szBuffer);
 
 		// get content type
-		if (RegQueryValueEx(hKey, "Content Type", NULL, NULL,
+		if (RegQueryValueEx(hKey, "Content Type", nullptr, nullptr,
 			(LPBYTE)szBuffer, &dwBuffSize) == ERROR_SUCCESS)
 		{
 			// success
@@ -37,14 +37,14 @@ long long getFileSize(const std::string& filename)
 	return rc == 0 ? stat_buf.st_size : -1;
 }
 
-bool ResourceManager::load(std::string key, std::string file)
+bool ResourceManager::load(const std::string& key, const std::string& file)
 {
-	if (file.find(".") == file.npos) return false;
+	if (file.find(".") == std::string::npos) return false;
 	std::string type = GetMimeType(file.substr(file.find_last_of('.'), file.size() - file.find_last_of('.')));
 
 	if(type.substr(0, type.find("/")) == "image")
 	{
-		textureHolder.emplace(key, new sf::Texture());
+		textureHolder.emplace(key, std::make_shared<sf::Texture>());
 		textureHolder[key]->loadFromFile(file);
 	}
 	else if(type == "application/json")
@@ -54,7 +54,7 @@ bool ResourceManager::load(std::string key, std::string file)
 		{
 			nlohmann::json j;
 			jFile >> j;
-			jsonHolder.emplace(key, new nlohmann::json(j));
+			jsonHolder.emplace(key, std::make_shared<nlohmann::json>(j));
 			return true;
 		}
 		else 
@@ -64,27 +64,27 @@ bool ResourceManager::load(std::string key, std::string file)
 	}
 	else if(type.substr(0, type.find("/")) == "audio")
 	{
-		int size = getFileSize(file);
+		long long size = getFileSize(file);
 		if(size < 0)
 		{
 			std::cout << "Failed to load audio " << file << ". Reason: Unable to open file" << std::endl;
 		}
-		else if(size <= audioLimit)
+		else if(static_cast<unsigned long long>(size) <= audioLimit)
 		{
-			soundHolder.emplace(key, new sf::SoundBuffer());
+			soundHolder.emplace(key, std::make_shared<sf::SoundBuffer>());
 			soundHolder[key]->loadFromFile(file);
 			return true;
 		}
 		else
 		{
-			musicHolder.emplace(key, new sf::Music());
+			musicHolder.emplace(key, std::make_shared<sf::Music>());
 			musicHolder[key]->openFromFile(file);
 			return true;
 		}
 	}
 	else if(file.substr(file.find_last_of('.'), file.size() - file.find_last_of('.')) == ".ttf")
 	{
-		fontHolder.emplace(key, new sf::Font());
+		fontHolder.emplace(key, std::make_shared<sf::Font>());
 		fontHolder[key]->loadFromFile(file);
 		return true;
 	}
@@ -92,7 +92,7 @@ bool ResourceManager::load(std::string key, std::string file)
 	return false;
 }
 
-GVariant ResourceManager::get(std::string key)
+GVariant ResourceManager::get(const std::string& key)
 {
 	if(musicHolder.find(key) != musicHolder.end())
 	{
@@ -117,12 +117,12 @@ GVariant ResourceManager::get(std::string key)
 	return GVariant();
 }
 
-GVariant ResourceManager::operator[](std::string key)
+GVariant ResourceManager::operator[](const std::string& key)
 {
 	return get(key);
 }
 
-void ResourceManager::remove(std::string key)
+void ResourceManager::remove(const std::string& key)
 {
 	if (musicHolder.find(key) != musicHolder.end())
 	{

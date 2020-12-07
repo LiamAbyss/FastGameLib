@@ -83,7 +83,7 @@ $(document).ready(function(){initNavTree('class_scene.html',''); initResizable()
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Scene Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
@@ -93,19 +93,31 @@ $(document).ready(function(){initNavTree('class_scene.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7dd380896c2aae26dc8369eb5dfd7bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7dd380896c2aae26dc8369eb5dfd7bfb">setGame</a> (<a class="el" href="class_game.html">Game</a> *<a class="el" href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">game</a>)</td></tr>
-<tr class="separator:a7dd380896c2aae26dc8369eb5dfd7bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313acb1af95a2d3bde0fb9ac386bdde5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a313acb1af95a2d3bde0fb9ac386bdde5">setGame</a> (<a class="el" href="class_game.html">Game</a> &amp;globalGame)</td></tr>
+<tr class="separator:a313acb1af95a2d3bde0fb9ac386bdde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e09d91ebd10ae9cc7c12c39d06386c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af6e09d91ebd10ae9cc7c12c39d06386c">~Scene</a> ()=default</td></tr>
+<tr class="separator:af6e09d91ebd10ae9cc7c12c39d06386c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5afaadd288e14b90c7c90752d3392fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game.html">Game</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ae5afaadd288e14b90c7c90752d3392fc">getGame</a> ()</td></tr>
+<tr class="separator:ae5afaadd288e14b90c7c90752d3392fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f727a2638448a792d8bbdfd2b74a115"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_resource_manager.html">ResourceManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a2f727a2638448a792d8bbdfd2b74a115">getResources</a> ()</td></tr>
+<tr class="separator:a2f727a2638448a792d8bbdfd2b74a115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533b69e02606bc3bfb0958a181676645"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a533b69e02606bc3bfb0958a181676645">getWindow</a> ()</td></tr>
+<tr class="separator:a533b69e02606bc3bfb0958a181676645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55f75789e236a8262a8826bb21efc060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a55f75789e236a8262a8826bb21efc060">setInitialized</a> (bool init)</td></tr>
 <tr class="separator:a55f75789e236a8262a8826bb21efc060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040bda08c640d5d488c960bdbf761b0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a040bda08c640d5d488c960bdbf761b0f">hasBeenInitialized</a> () const</td></tr>
+<tr class="separator:a040bda08c640d5d488c960bdbf761b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a881eaef4995c362b00034ebb32449341"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize</a> ()=0</td></tr>
 <tr class="separator:a881eaef4995c362b00034ebb32449341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04d81228fc8f347bb9bc10d5d6d6812"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac04d81228fc8f347bb9bc10d5d6d6812">update</a> (sf::Time dt, sf::Event &amp;ev)=0</td></tr>
 <tr class="separator:ac04d81228fc8f347bb9bc10d5d6d6812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ba5d5098a2ae93a80edae29ee6294e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a85ba5d5098a2ae93a80edae29ee6294e">update</a> (sf::Time dt)=0</td></tr>
+<tr class="separator:a85ba5d5098a2ae93a80edae29ee6294e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a823f4cd60d27932ee16f74adb0421ff6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a823f4cd60d27932ee16f74adb0421ff6">render</a> ()=0</td></tr>
 <tr class="separator:a823f4cd60d27932ee16f74adb0421ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:a7ef6645b60a406260b513cf200bc6c40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7ef6645b60a406260b513cf200bc6c40">game</a></td></tr>
 <tr class="separator:a7ef6645b60a406260b513cf200bc6c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca2b1b949f597c37703bdb2041c3043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_resource_manager.html">ResourceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a1ca2b1b949f597c37703bdb2041c3043">resources</a></td></tr>
@@ -117,7 +129,109 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pure virtual class of a game scene. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af6e09d91ebd10ae9cc7c12c39d06386c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e09d91ebd10ae9cc7c12c39d06386c">&#9670;&nbsp;</a></span>~Scene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Scene::~Scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae5afaadd288e14b90c7c90752d3392fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5afaadd288e14b90c7c90752d3392fc">&#9670;&nbsp;</a></span>getGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game.html">Game</a> &amp; Scene::getGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A reference to the game </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game.html">Game</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2f727a2638448a792d8bbdfd2b74a115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f727a2638448a792d8bbdfd2b74a115">&#9670;&nbsp;</a></span>getResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_resource_manager.html">ResourceManager</a> &amp; Scene::getResources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A reference on the resources </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_resource_manager.html">ResourceManager</a> </dd></dl>
+
+</div>
+</div>
+<a id="a533b69e02606bc3bfb0958a181676645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533b69e02606bc3bfb0958a181676645">&#9670;&nbsp;</a></span>getWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RenderWindow &amp; Scene::getWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A reference on the game window </dd></dl>
+
+</div>
+</div>
+<a id="a040bda08c640d5d488c960bdbf761b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040bda08c640d5d488c960bdbf761b0f">&#9670;&nbsp;</a></span>hasBeenInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::hasBeenInitialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true If the scene has been initialized </dd>
+<dd>
+false Otherwise </dd></dl>
+
+</div>
+</div>
 <a id="a881eaef4995c362b00034ebb32449341"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a881eaef4995c362b00034ebb32449341">&#9670;&nbsp;</a></span>initialize()</h2>
 
@@ -140,7 +254,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initializer to load resources, show loading animations etc... </p>
+<p>Initializer to load resources, or whatever you want etc... </p><dl class="section note"><dt>Note</dt><dd>You shouldn't do any rendering inside the initialize method </dd></dl>
 
 </div>
 </div>
@@ -170,8 +284,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7dd380896c2aae26dc8369eb5dfd7bfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dd380896c2aae26dc8369eb5dfd7bfb">&#9670;&nbsp;</a></span>setGame()</h2>
+<a id="a313acb1af95a2d3bde0fb9ac386bdde5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313acb1af95a2d3bde0fb9ac386bdde5">&#9670;&nbsp;</a></span>setGame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,13 +293,13 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Scene::setGame </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> &amp;&#160;</td>
+          <td class="paramname"><em>globalGame</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Used in <a class="el" href="class_game.html#ac7f4be1ef3064a328dcb4d3ab2332c85">Game::addScene()</a> to initialize the protected attributes. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Used in <a class="el" href="class_game.html#aee09cfc57c5325c35fbcef103e4ea98d">Game::addScene()</a> to initialize the protected attributes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">game</td><td>A pointer to the game. </td></tr>
   </table>
@@ -211,11 +325,53 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Choose whether the scene must be used as if it were already initialized or not. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>A boolean </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The game will always call <a class="el" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize()</a> when changing scenes, it is up to you to use <a class="el" href="class_scene.html#a040bda08c640d5d488c960bdbf761b0f">hasBeenInitialized()</a> to choose what you want to do only once inside <a class="el" href="class_scene.html#a881eaef4995c362b00034ebb32449341">initialize()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_scene.html#a881eaef4995c362b00034ebb32449341">Scene.initialize</a> </dd></dl>
+
+</div>
+</div>
+<a id="a85ba5d5098a2ae93a80edae29ee6294e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ba5d5098a2ae93a80edae29ee6294e">&#9670;&nbsp;</a></span>update() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::update </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="class_game.html">Game</a> loop in which all the processing is done. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>The time passed since last update. </td></tr>
+    <tr><td class="paramname">ev</td><td>The SFML event for the main window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This method will be called after its overloaded sister when there is an event </dd></dl>
 
 </div>
 </div>
 <a id="ac04d81228fc8f347bb9bc10d5d6d6812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac04d81228fc8f347bb9bc10d5d6d6812">&#9670;&nbsp;</a></span>update()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04d81228fc8f347bb9bc10d5d6d6812">&#9670;&nbsp;</a></span>update() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,6 +410,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>This function triggers only if there is an event, such as a key press or a mouse click </dd></dl>
 
 </div>
 </div>
@@ -273,7 +430,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -296,10 +453,11 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Whether the scene has been initialized or not </p>
 
 </div>
 </div>
@@ -318,7 +476,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -341,7 +499,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

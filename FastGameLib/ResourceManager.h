@@ -10,12 +10,12 @@
 #include <Windows.h>
 #include <fstream>
 
-typedef std::shared_ptr<sf::Texture> GTexture;
-typedef std::shared_ptr<sf::Music> GMusic;
-typedef std::shared_ptr<sf::SoundBuffer> GSoundBuffer;
-typedef std::shared_ptr<nlohmann::json> GJson;
-typedef std::shared_ptr<sf::Font> GFont;
-typedef boost::variant<GTexture, GJson, GSoundBuffer, GMusic, GFont> GVariant;
+using GTexture = std::shared_ptr<sf::Texture>;
+using GMusic = std::shared_ptr<sf::Music>;
+using GSoundBuffer = std::shared_ptr<sf::SoundBuffer>;
+using GJson = std::shared_ptr<nlohmann::json>;
+using GFont = std::shared_ptr<sf::Font>;
+using GVariant = boost::variant<GTexture, GJson, GSoundBuffer, GMusic, GFont>;
 
 /** 
  * Manages all the resources.
@@ -71,7 +71,7 @@ public:
 	 * \return false If the file doesn't exist or if the extension is not supported.
 	 * \note Currently supported : Audio and image files supported by SFML, JSON files, and font files (.ttf)
 	 */
-	bool load(std::string key, std::string file);
+	bool load(const std::string& key, const std::string& file);
 
 	/**
 	 * \private
@@ -79,7 +79,7 @@ public:
 	 * \return A boost::variant of std::shared_ptr according to the resource type.
 	 * \see GTexture, GSoundBuffer, GMusic, GJson, GFont, GVariant
 	 */
-	GVariant get(std::string key);
+	GVariant get(const std::string& key);
 
 	/**
 	 * \private
@@ -87,13 +87,13 @@ public:
 	 * \return A boost::variant of std::shared_ptr according to the resource type.
 	 * \see get()
 	 */
-	GVariant operator[](std::string key);
+	GVariant operator[](const std::string& key);
 
 	/**
 	 * \private
 	 * \param key The key associated to the resource.
 	 */
-	void remove(std::string key);
+	void remove(const std::string& key);
 
 	/**
 	 * \private

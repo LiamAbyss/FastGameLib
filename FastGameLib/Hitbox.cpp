@@ -3,55 +3,28 @@
 namespace json = nlohmann;
 using namespace std;
 
-void Hitbox::flip(sf::Sprite* sprite, bool state)
+void Hitbox::flip(const sf::Sprite* sprite, bool state)
 {
 	if (flipped == state) return;
 	pos.x = sprite->getGlobalBounds().width - pos.x - size.x;
 	flipped = !flipped;
 }
 
-std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(std::string filename, std::string name)
+std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(const std::string& filename, const std::string& name)
 {
-	std::map<std::string, std::vector<Hitbox>> hitboxes;
 	json::json j;
 	std::ifstream file(filename);
 
 	file >> j;
-	for(auto& f : j[name].items())
-	{
-		if (f.key() != "active")
-		{
-			hitboxes.emplace(f.key(), std::vector<Hitbox>());
-			for (auto& g : f.value())
-			{
-				hitboxes[f.key()].push_back(Hitbox());
-				auto& hitbox = hitboxes[f.key()][hitboxes[f.key()].size() - 1];
-				hitbox.label = g["label"];
-				hitbox.pos = sf::Vector2f(stoi(g["x"].dump()), stoi(g["y"].dump()));
-				hitbox.size = sf::Vector2f(stoi(g["width"].dump()), stoi(g["height"].dump()));
-				hitbox.type = g["type"];
-				hitbox.start = stoi(g["start"].dump());
-				hitbox.end = stoi(g["end"].dump());
-				hitbox.anchor = sf::Vector2f(0, 0);
-				hitbox.right = hitbox.anchor.x + hitbox.pos.x + hitbox.size.x;
-				hitbox.left = hitbox.anchor.x + hitbox.pos.x;
-				hitbox.top = hitbox.anchor.y + hitbox.pos.y;
-				hitbox.bottom = hitbox.anchor.y + hitbox.pos.y + hitbox.size.y;
-				hitbox.flipped = false;
-				hitbox.angle = stof(g["angle"].dump());
-				hitbox.scale = sf::Vector2f(1, 1);
-			}
-		}
-	}
-
-	return hitboxes;
+	file.close();
+	return getHitboxes(j, name);
 }
 
-std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(nlohmann::json j, std::string name)
+std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(const nlohmann::json& j, const std::string& name)
 {
 	std::map<std::string, std::vector<Hitbox>> hitboxes;
 
-	for (auto& f : j[name].items())
+	for(const auto& f : j[name].items())
 	{
 		if (f.key() != "active")
 		{
@@ -61,8 +34,8 @@ std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(nlohmann::json j,
 				hitboxes[f.key()].push_back(Hitbox());
 				auto& hitbox = hitboxes[f.key()][hitboxes[f.key()].size() - 1];
 				hitbox.label = g["label"];
-				hitbox.pos = sf::Vector2f(stoi(g["x"].dump()), stoi(g["y"].dump()));
-				hitbox.size = sf::Vector2f(stoi(g["width"].dump()), stoi(g["height"].dump()));
+				hitbox.pos = sf::Vector2f(stof(g["x"].dump()), stof(g["y"].dump()));
+				hitbox.size = sf::Vector2f(stof(g["width"].dump()), stof(g["height"].dump()));
 				hitbox.type = g["type"];
 				hitbox.start = stoi(g["start"].dump());
 				hitbox.end = stoi(g["end"].dump());
@@ -83,7 +56,7 @@ std::map<std::string, std::vector<Hitbox>> Hitbox::getHitboxes(nlohmann::json j,
 
 // Given three colinear points p, q, r, the function checks if 
 // point q lies on line segment 'pr' 
-bool onSegment(sf::Vector2f p, sf::Vector2f q, sf::Vector2f r)
+bool onSegment(const sf::Vector2f& p, const sf::Vector2f& q, const sf::Vector2f& r)
 {
 	if (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
 		q.y <= max(p.y, r.y) && q.y >= min(p.y, r.y))
@@ -97,12 +70,13 @@ bool onSegment(sf::Vector2f p, sf::Vector2f q, sf::Vector2f r)
 // 0 --> p, q and r are colinear 
 // 1 --> Clockwise 
 // 2 --> Counterclockwise 
-int orientation(sf::Vector2f p, sf::Vector2f q, sf::Vector2f r)
+int orientation(const sf::Vector2f& p, const sf::Vector2f& q, const sf::Vector2f& r)
 {
 	// See https://www.geeksforgeeks.org/orientation-3-ordered-points/ 
 	// for details of below formula. 
-	int val = (q.y - p.y) * (r.x - q.x) -
-		(q.x - p.x) * (r.y - q.y);
+	auto val = static_cast<int>(
+		(q.y - p.y) * (r.x - q.x)
+		- (q.x - p.x) * (r.y - q.y));
 
 	if (val == 0) return 0;  // colinear 
 
@@ -140,27 +114,46 @@ bool doIntersect(sf::Vector2f p1, sf::Vector2f q1, sf::Vector2f p2, sf::Vector2f
 	return false; // Doesn't fall in any of the above cases 
 }
 
-bool Hitbox::isOver(Hitbox a, Hitbox b)
+bool Hitbox::isOver(const Hitbox& a, const Hitbox& b)
 {
 	double c = 2 * M_PI / 360;
 
 	vector<sf::Vector2f> av;
 	av.push_back(sf::Vector2f(a.left, a.top));
-	av.push_back(sf::Vector2f(a.left + a.size.x * cos(a.angle*c), a.top + a.size.x * sin(a.angle * c)));
-	av.push_back(sf::Vector2f(a.left + a.size.x * cos(a.angle * c) - a.size.y * sin(a.angle * c), a.top + a.size.x * sin(a.angle * c) + a.size.y * cos(a.angle * c)));
-	av.push_back(sf::Vector2f(a.left - a.size.y * sin(a.angle * c), a.top + a.size.y * cos(a.angle * c)));
+	av.push_back(sf::Vector2f(
+		a.left + a.size.x * static_cast<float>(cos(a.angle*c)), 
+		a.top + a.size.x * static_cast<float>(sin(a.angle * c)))
+	);
+	av.push_back(sf::Vector2f(
+		a.left + a.size.x * static_cast<float>(cos(a.angle * c)) - a.size.y * static_cast<float>(sin(a.angle * c)), 
+		a.top + a.size.x * static_cast<float>(sin(a.angle * c)) + a.size.y * static_cast<float>(cos(a.angle * c)))
+	);
+	av.push_back(sf::Vector2f(
+		a.left - a.size.y * static_cast<float>(sin(a.angle * c)), 
+		a.top + a.size.y * static_cast<float>(cos(a.angle * c)))
+	);
 	av.push_back(sf::Vector2f(a.left, a.top));
+
 	vector<sf::Vector2f> bv;
 	bv.push_back(sf::Vector2f(b.left, b.top));
-	bv.push_back(sf::Vector2f(b.left + b.size.x * cos(b.angle * c), b.top + b.size.x * sin(b.angle * c)));
-	bv.push_back(sf::Vector2f(b.left + b.size.x * cos(b.angle * c) - b.size.y * sin(b.angle * c), b.top + b.size.x * sin(b.angle * c) + b.size.y * cos(b.angle * c)));
-	bv.push_back(sf::Vector2f(b.left - b.size.y * sin(b.angle * c), b.top + b.size.y * cos(b.angle * c)));
+	bv.push_back(sf::Vector2f(
+		b.left + b.size.x * static_cast<float>(cos(b.angle * c)), 
+		b.top + b.size.x * static_cast<float>(sin(b.angle * c)))
+	);
+	bv.push_back(sf::Vector2f(
+		b.left + b.size.x * static_cast<float>(cos(b.angle * c)) - b.size.y * static_cast<float>(sin(b.angle * c)), 
+		b.top + b.size.x * static_cast<float>(sin(b.angle * c)) + b.size.y * static_cast<float>(cos(b.angle * c)))
+	);
+	bv.push_back(sf::Vector2f(
+		b.left - b.size.y * static_cast<float>(sin(b.angle * c)),
+		b.top + b.size.y * static_cast<float>(cos(b.angle * c)))
+	);
 	bv.push_back(sf::Vector2f(b.left, b.top));
 
 	
-	for(int i = 0; i < av.size() - 1; i++)
+	for(size_t i = 0; i < av.size() - 1; i++)
 	{
-		for (int j = 0; j < bv.size() - 1; j++)
+		for (size_t j = 0; j < bv.size() - 1; j++)
 		{
 			if (doIntersect(av[i], av[i + 1], bv[j], bv[j + 1]))
 				return true;
@@ -170,53 +163,44 @@ bool Hitbox::isOver(Hitbox a, Hitbox b)
 	//Point in polygon algorithm
 	for (int k = 0; k < av.size() - 1; k++)
 	{
-		int nvert = bv.size() - 1;
+		int nvert = static_cast<int>(bv.size()) - 1;
 		bool res = false;
 		int j = nvert - 1;
-		for (int i = 0; i < nvert; j = i++) {
+		for (int i = 0; i < nvert; i++) {
 			if (((bv[i].y > av[k].y) != (bv[j].y > av[k].y)) &&
 				(av[k].x < (bv[j].x - bv[i].x) * (av[k].y - bv[i].y) / (bv[j].y - bv[i].y) + bv[i].x))
 				res = !res;
+			j = i;
 		}
 		if(res) return true;
 	}
 	for (int k = 0; k < bv.size() - 1; k++)
 	{
-		int nvert = av.size() - 1;
+		int nvert = static_cast<int>(av.size()) - 1;
 		bool res = false; 
 		int j = nvert - 1;
-		for (int i = 0; i < nvert; j = i++) {
+		for (int i = 0; i < nvert; i++) {
 			if (((av[i].y > bv[k].y) != (av[j].y > bv[k].y)) &&
 				(bv[k].x < (av[j].x - av[i].x) * (bv[k].y - av[i].y) / (av[j].y - av[i].y) + av[i].x))
 				res = !res;
+			j = i;
 		}
 		if (res) return true;
 	}
 	return false;
-	/*return (
-		(a.right >= b.left && a.right <= b.right && a.bottom <= b.bottom && a.bottom >= b.top) ||
-		(a.right >= b.left && a.right <= b.right && a.top >= b.top && a.top <= b.bottom) ||
-		(a.left <= b.right && a.left >= b.left && a.bottom <= b.bottom && a.bottom >= b.top) ||
-		(a.left <= b.right && a.left >= b.left && a.top >= b.top && a.top <= b.bottom) ||
-		(b.right >= a.left && b.right <= a.right && b.bottom <= a.bottom && b.bottom >= a.top) ||
-		(b.right >= a.left && b.right <= a.right && b.top >= a.top && b.top <= a.bottom) ||
-		(b.left <= a.right && b.left >= a.left && b.bottom <= a.bottom && b.bottom >= a.top) ||
-		(b.left <= a.right && b.left >= a.left && b.top >= a.top && b.top <= a.bottom)
-		);*/
 }
 
-bool Hitbox::doesHit(Hitboxed* a, Hitboxed* b)
+bool Hitbox::doesHit(Hitboxed * a, Hitboxed * b)
 {
-	for(Hitbox& hurtbox : a->hitboxes[a->activeHitbox])
+	for(const Hitbox& hurtbox : a->getActiveHitboxes())
 	{
-		if(hurtbox.type == "hurtbox")
+		if (hurtbox.type != "hurtbox") continue;
+		
+		for(const Hitbox& hitbox : b->getActiveHitboxes())
 		{
-			for(Hitbox& hitbox : b->hitboxes[b->activeHitbox])
+			if(hitbox.type == "hitbox" && isOver(hurtbox, hitbox))
 			{
-				if(hitbox.type == "hitbox" && isOver(hurtbox, hitbox))
-				{
-					return true;
-				}
+				return true;
 			}
 		}
 	}
@@ -225,9 +209,9 @@ bool Hitbox::doesHit(Hitboxed* a, Hitboxed* b)
 
 bool Hitbox::isOver(Hitboxed* a, Hitboxed* b)
 {
-	for (Hitbox& hurtbox : a->hitboxes[a->activeHitbox])
+	for (const Hitbox& hurtbox : a->getActiveHitboxes())
 	{
-		for (Hitbox& hitbox : b->hitboxes[b->activeHitbox])
+		for (const Hitbox& hitbox : b->getActiveHitboxes())
 		{
 			if (isOver(hurtbox, hitbox))
 			{
@@ -238,22 +222,66 @@ bool Hitbox::isOver(Hitboxed* a, Hitboxed* b)
 	return false;
 }
 
-sf::Vector2f Hitbox::getScale()
+bool Hitbox::isPointInHitbox(const sf::Vector2f & point, const Hitbox & hitbox)
+{
+	double c = 2 * M_PI / 360;
+
+	vector<sf::Vector2f> bv;
+	bv.push_back(sf::Vector2f(hitbox.left, hitbox.top));
+	bv.push_back(sf::Vector2f(
+		hitbox.left + hitbox.size.x * static_cast<float>(cos(hitbox.angle * c)),
+		hitbox.top + hitbox.size.x * static_cast<float>(sin(hitbox.angle * c)))
+	);
+	bv.push_back(sf::Vector2f(
+		hitbox.left + hitbox.size.x * static_cast<float>(cos(hitbox.angle * c)) - hitbox.size.y * static_cast<float>(sin(hitbox.angle * c)),
+		hitbox.top + hitbox.size.x * static_cast<float>(sin(hitbox.angle * c)) + hitbox.size.y * static_cast<float>(cos(hitbox.angle * c)))
+	);
+	bv.push_back(sf::Vector2f(
+		hitbox.left - hitbox.size.y * static_cast<float>(sin(hitbox.angle * c)),
+		hitbox.top + hitbox.size.y * static_cast<float>(cos(hitbox.angle * c)))
+	);
+	bv.push_back(sf::Vector2f(hitbox.left, hitbox.top));
+
+	int nvert = static_cast<int>(bv.size()) - 1;
+	bool res = false;
+	int j = nvert - 1;
+	for (int i = 0; i < nvert; i++) {
+		if (((bv[i].y > point.y) != (bv[j].y > point.y)) &&
+			(point.x < (bv[j].x - bv[i].x) * (point.y - bv[i].y) / (bv[j].y - bv[i].y) + bv[i].x))
+			res = !res;
+		j = i;
+	}
+	return res;
+}
+
+bool Hitbox::isPointInHitbox(const sf::Vector2f & point, Hitboxed * hitboxed)
+{
+	for (const Hitbox& h : hitboxed->getActiveHitboxes())
+	{
+		if (isPointInHitbox(point, h))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+sf::Vector2f Hitbox::getScale() const
 {
 	return scale;
 }
 
-void Hitbox::setScale(sf::Vector2f scale)
+void Hitbox::setScale(const sf::Vector2f& hitboxScale)
 {
-	pos.x = pos.x / this->scale.x * scale.x;
-	pos.y = pos.y / this->scale.y * scale.y;
-	size.x = size.x / this->scale.x * scale.x;
-	size.y = size.y / this->scale.y * scale.y;
-	this->scale = scale;
-	this->right = this->anchor.x +this->pos.x + this->size.x;
-	this->left = this->anchor.x + this->pos.x;
-	this->top = this->anchor.y + this->pos.y;
-	this->bottom = this->anchor.y + this->pos.y + this->size.y;
+	pos.x = pos.x / scale.x * hitboxScale.x;
+	pos.y = pos.y / scale.y * hitboxScale.y;
+	size.x = size.x / scale.x * hitboxScale.x;
+	size.y = size.y / scale.y * hitboxScale.y;
+	scale = hitboxScale;
+	right = anchor.x + pos.x + size.x;
+	left = anchor.x + pos.x;
+	top = anchor.y + pos.y;
+	bottom = anchor.y + pos.y + size.y;
 }
 
 sf::Vector2f Hitbox::getLocalPos() const
@@ -266,20 +294,20 @@ sf::Vector2f Hitbox::getGlobalPos() const
 	return (anchor + pos);
 }
 
-void Hitbox::setPos(sf::Vector2f pos)
+void Hitbox::setPos(const sf::Vector2f& hitboxPos)
 {
-	setX(pos.x);
-	setY(pos.y);
+	setX(hitboxPos.x);
+	setY(hitboxPos.y);
 }
 
-void Hitbox::setX(float x)
+void Hitbox::setX(const float& x)
 {
 	anchor.x = x;
 	right = anchor.x + pos.x + size.x;
 	left = anchor.x + pos.x;
 }
 
-void Hitbox::setY(float y)
+void Hitbox::setY(const float& y)
 {
 	anchor.y = y;
 	bottom = anchor.y + pos.y + size.y;
@@ -291,9 +319,9 @@ std::string Hitbox::getLabel() const
     return label;
 }
 
-void Hitbox::setType(std::string type)
+void Hitbox::setType(const std::string& hitboxType)
 {
-	this->type = type;
+	type = hitboxType;
 }
 
 std::string Hitbox::getType() const
@@ -311,9 +339,9 @@ int Hitbox::getEnd() const
     return end;
 }
 
-void Hitbox::setSize(sf::Vector2f size)
+void Hitbox::setSize(const sf::Vector2f& hitboxSize)
 {
-	this->size = size;
+	size = hitboxSize;
 	bottom = anchor.y + pos.y + size.y;
 	top = anchor.y + pos.y;
 	right = anchor.x + pos.x + size.x;
@@ -350,7 +378,27 @@ bool Hitbox::getFlipped() const
     return flipped;
 }
 
-void Hitboxed::moveHitboxes(sf::Vector2f v)
+std::map<std::string, std::vector<Hitbox>>& Hitboxed::getHitboxes()
+{
+	return static_cast<std::map<std::string, std::vector<Hitbox>>&>(hitboxes);
+}
+
+void Hitboxed::setHitboxes(const std::map<std::string, std::vector<Hitbox>>& newHitboxes)
+{
+	hitboxes = newHitboxes;
+}
+
+std::string& Hitboxed::getActiveHitboxName()
+{
+	return static_cast<std::string&>(activeHitbox);
+}
+
+std::vector<Hitbox>& Hitboxed::getActiveHitboxes()
+{
+	return static_cast<std::vector<Hitbox>&>(hitboxes[activeHitbox]);
+}
+
+void Hitboxed::moveHitboxes(const sf::Vector2f& v)
 {
 	for (auto& f : hitboxes)
 	{
@@ -361,7 +409,7 @@ void Hitboxed::moveHitboxes(sf::Vector2f v)
 	}
 }
 
-void Hitboxed::setPosHitboxes(sf::Vector2f pos)
+void Hitboxed::setPosHitboxes(const sf::Vector2f& pos)
 {
 	for (auto& f : hitboxes)
 	{
@@ -374,14 +422,13 @@ void Hitboxed::setPosHitboxes(sf::Vector2f pos)
 
 void Hitboxed::renderHitboxes(sf::RenderTarget& target)
 {
-	double c = 2 * M_PI / 360;
-	for (auto& hitbox : hitboxes[activeHitbox])
+	for (const auto& hitbox : hitboxes[activeHitbox])
 	{
 		sf::RectangleShape rect;
 		rect.setFillColor((hitbox.getType() == "hitbox" ? sf::Color(0,0,255,150) : sf::Color(255,0,0,150)));
 		rect.setPosition(hitbox.getGlobalPos());
 		rect.setSize(hitbox.getSize());
-		rect.rotate(hitbox.getAngle());
+		rect.rotate(static_cast<float>(hitbox.getAngle()));
 		target.draw(rect);
 	}
 }
@@ -408,12 +455,12 @@ void Hitboxed::rotateHitboxes(double degrees)
 	}
 }
 
-void Hitboxed::setActiveHitbox(std::string label)
+void Hitboxed::setActiveHitbox(const std::string& label)
 {
 	activeHitbox = label;
 }
 
-void Hitboxed::setScaleHitboxes(sf::Vector2f scale)
+void Hitboxed::setScaleHitboxes(const sf::Vector2f& scale)
 {
 	for (auto& f : hitboxes)
 	{
@@ -424,7 +471,7 @@ void Hitboxed::setScaleHitboxes(sf::Vector2f scale)
 	}
 }
 
-void Hitboxed::flipHitboxes(sf::Sprite* sprite, bool state)
+void Hitboxed::flipHitboxes(const sf::Sprite * sprite, const bool state = true)
 {
 	for (auto& f : hitboxes)
 	{

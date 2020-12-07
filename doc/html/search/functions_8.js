@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['remove_193',['remove',['../class_resource_manager.html#a5cd0386cc0efed2294293307766054b8',1,'ResourceManager']]],
-  ['render_194',['render',['../class_scene.html#a823f4cd60d27932ee16f74adb0421ff6',1,'Scene']]],
-  ['renderhitboxes_195',['renderHitboxes',['../class_hitboxed.html#a6e19033411805ca71c23f08cc48d0374',1,'Hitboxed']]],
-  ['rotate_196',['rotate',['../class_hitbox.html#af2df42cf76305bbbfd1ca8c8266f676f',1,'Hitbox']]],
-  ['rotatehitboxes_197',['rotateHitboxes',['../class_hitboxed.html#a2ad62af4d793b8cdbd94525742bab7d2',1,'Hitboxed']]]
+  ['onsegment_224',['onSegment',['../_hitbox_8cpp.html#a422e5567926bc75228673e211b88173e',1,'Hitbox.cpp']]],
+  ['operator_5b_5d_225',['operator[]',['../class_resource_manager.html#a6bf69a236c5ec8c424c7200b8a5cb64f',1,'ResourceManager']]],
+  ['orientation_226',['orientation',['../_hitbox_8cpp.html#adb9605a385ed3a6f9aedaea37bfebb4a',1,'Hitbox.cpp']]]
 ];

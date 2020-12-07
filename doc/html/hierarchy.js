@@ -6,5 +6,8 @@ var hierarchy =
       [ "Clickable", "class_clickable.html", null ]
     ] ],
     [ "ResourceManager", "class_resource_manager.html", null ],
-    [ "Scene", "class_scene.html", null ]
+    [ "Scene", "class_scene.html", null ],
+    [ "View", null, [
+      [ "Camera", "class_camera.html", null ]
+    ] ]
 ];

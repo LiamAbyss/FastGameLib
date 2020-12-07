@@ -83,7 +83,7 @@ $(document).ready(function(){initNavTree('class_hitboxed.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Hitboxed Class Reference</div>  </div>
 </div><!--header-->
@@ -102,29 +102,154 @@ Inheritance diagram for Hitboxed:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45eeb395861906fadb0593bf3d3b88b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a45eeb395861906fadb0593bf3d3b88b1">moveHitboxes</a> (sf::Vector2f v)</td></tr>
-<tr class="separator:a45eeb395861906fadb0593bf3d3b88b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a4488c652f34aef13dd63ddfd04ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a59a4488c652f34aef13dd63ddfd04ce8">setPosHitboxes</a> (sf::Vector2f pos)</td></tr>
-<tr class="separator:a59a4488c652f34aef13dd63ddfd04ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b082d612a109a5a0d1c76f36c3e26e"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a21b082d612a109a5a0d1c76f36c3e26e">getHitboxes</a> ()</td></tr>
+<tr class="separator:a21b082d612a109a5a0d1c76f36c3e26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5730de7f2e81bc007a1bc0f2008f46f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#ac5730de7f2e81bc007a1bc0f2008f46f">setHitboxes</a> (const std::map&lt; std::string, std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt;&gt; &amp;newHitboxes)</td></tr>
+<tr class="separator:ac5730de7f2e81bc007a1bc0f2008f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98ab3d42a998024a941e38b7cbb8019"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#ad98ab3d42a998024a941e38b7cbb8019">getActiveHitboxName</a> ()</td></tr>
+<tr class="separator:ad98ab3d42a998024a941e38b7cbb8019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e079ec154172a94bf2623aae9f4ca0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#ae9e079ec154172a94bf2623aae9f4ca0">getActiveHitboxes</a> ()</td></tr>
+<tr class="separator:ae9e079ec154172a94bf2623aae9f4ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8dd451284aa50513a479ade7c47a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#afb8dd451284aa50513a479ade7c47a64">moveHitboxes</a> (const sf::Vector2f &amp;v)</td></tr>
+<tr class="separator:afb8dd451284aa50513a479ade7c47a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c03e338a28288bf21b346d4433d054b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a7c03e338a28288bf21b346d4433d054b">setPosHitboxes</a> (const sf::Vector2f &amp;pos)</td></tr>
+<tr class="separator:a7c03e338a28288bf21b346d4433d054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e19033411805ca71c23f08cc48d0374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a6e19033411805ca71c23f08cc48d0374">renderHitboxes</a> (sf::RenderTarget &amp;target)</td></tr>
 <tr class="separator:a6e19033411805ca71c23f08cc48d0374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4dc8c3355193bafd6366cdfe4e3a0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#ac4dc8c3355193bafd6366cdfe4e3a0ff">setAngleHitboxes</a> (double degrees)</td></tr>
 <tr class="separator:ac4dc8c3355193bafd6366cdfe4e3a0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ad62af4d793b8cdbd94525742bab7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a2ad62af4d793b8cdbd94525742bab7d2">rotateHitboxes</a> (double degrees)</td></tr>
 <tr class="separator:a2ad62af4d793b8cdbd94525742bab7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a884e111e5eb68a005bf058f6465be353"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a884e111e5eb68a005bf058f6465be353">setActiveHitbox</a> (std::string label)</td></tr>
-<tr class="separator:a884e111e5eb68a005bf058f6465be353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff06a516f0ce84a1cbd88de4c894a8c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#aff06a516f0ce84a1cbd88de4c894a8c2">setActiveHitbox</a> (const std::string &amp;label)</td></tr>
+<tr class="separator:aff06a516f0ce84a1cbd88de4c894a8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc34314aca5ecb73909a81b1116915c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#adc34314aca5ecb73909a81b1116915c0">setScaleHitboxes</a> (const sf::Vector2f &amp;scale)</td></tr>
+<tr class="separator:adc34314aca5ecb73909a81b1116915c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9827ddce8bb03a9785ffc374c3dfc202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a9827ddce8bb03a9785ffc374c3dfc202">flipHitboxes</a> (const sf::Sprite *sprite, const bool state)</td></tr>
+<tr class="separator:a9827ddce8bb03a9785ffc374c3dfc202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3863ec7da0becb759069d7a6f5203da1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a3863ec7da0becb759069d7a6f5203da1">areHitboxesFlipped</a> ()</td></tr>
+<tr class="separator:a3863ec7da0becb759069d7a6f5203da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:af7029e975f71db9997f82014672e1698"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#af7029e975f71db9997f82014672e1698">hitboxes</a></td></tr>
 <tr class="separator:af7029e975f71db9997f82014672e1698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a631c4cd1e571fd685b336437bd1c9040"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hitboxed.html#a631c4cd1e571fd685b336437bd1c9040">activeHitbox</a></td></tr>
 <tr class="separator:a631c4cd1e571fd685b336437bd1c9040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a45eeb395861906fadb0593bf3d3b88b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45eeb395861906fadb0593bf3d3b88b1">&#9670;&nbsp;</a></span>moveHitboxes()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A virtual class of sf::Sprite with hitboxes </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3863ec7da0becb759069d7a6f5203da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3863ec7da0becb759069d7a6f5203da1">&#9670;&nbsp;</a></span>areHitboxesFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Hitboxed::areHitboxesFlipped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true If the hitboxes are flipped </dd>
+<dd>
+false Otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a9827ddce8bb03a9785ffc374c3dfc202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9827ddce8bb03a9785ffc374c3dfc202">&#9670;&nbsp;</a></span>flipHitboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hitboxed::flipHitboxes </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Sprite *&#160;</td>
+          <td class="paramname"><em>sprite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>state</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sprite</td><td>The sprite which is <a class="el" href="class_hitboxed.html">Hitboxed</a> </td></tr>
+    <tr><td class="paramname">state</td><td>Whether the hitboxes must be flipped or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9e079ec154172a94bf2623aae9f4ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e079ec154172a94bf2623aae9f4ca0">&#9670;&nbsp;</a></span>getActiveHitboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt; &amp; Hitboxed::getActiveHitboxes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A reference on the active <a class="el" href="class_hitbox.html">Hitbox</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad98ab3d42a998024a941e38b7cbb8019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98ab3d42a998024a941e38b7cbb8019">&#9670;&nbsp;</a></span>getActiveHitboxName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string &amp; Hitboxed::getActiveHitboxName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The current hitbox label </dd></dl>
+
+</div>
+</div>
+<a id="a21b082d612a109a5a0d1c76f36c3e26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b082d612a109a5a0d1c76f36c3e26e">&#9670;&nbsp;</a></span>getHitboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt; &gt; &amp; Hitboxed::getHitboxes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A reference on the hitboxes of the object </dd></dl>
+
+</div>
+</div>
+<a id="afb8dd451284aa50513a479ade7c47a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8dd451284aa50513a479ade7c47a64">&#9670;&nbsp;</a></span>moveHitboxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,12 +257,18 @@ Data Fields</h2></td></tr>
         <tr>
           <td class="memname">void Hitboxed::moveHitboxes </td>
           <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The translation vector </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -156,6 +287,12 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The target where to draw the hitboxes for debug (usually the game window) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -174,11 +311,17 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">degrees</td><td>The rotation angle in degrees </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a884e111e5eb68a005bf058f6465be353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a884e111e5eb68a005bf058f6465be353">&#9670;&nbsp;</a></span>setActiveHitbox()</h2>
+<a id="aff06a516f0ce84a1cbd88de4c894a8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff06a516f0ce84a1cbd88de4c894a8c2">&#9670;&nbsp;</a></span>setActiveHitbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,12 +329,18 @@ Data Fields</h2></td></tr>
         <tr>
           <td class="memname">void Hitboxed::setActiveHitbox </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>label</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>The label of the wanted current <a class="el" href="class_hitbox.html">Hitbox</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -210,11 +359,42 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">degrees</td><td>The new angle of the hitboxes in degrees </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a59a4488c652f34aef13dd63ddfd04ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59a4488c652f34aef13dd63ddfd04ce8">&#9670;&nbsp;</a></span>setPosHitboxes()</h2>
+<a id="ac5730de7f2e81bc007a1bc0f2008f46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5730de7f2e81bc007a1bc0f2008f46f">&#9670;&nbsp;</a></span>setHitboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hitboxed::setHitboxes </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; std::string, std::vector&lt; <a class="el" href="class_hitbox.html">Hitbox</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>newHitboxes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the hitboxes of the object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newHitboxes</td><td>The hitboxes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>To load hitboxes, use <a class="el" href="class_hitbox.html#a833b9c4171a4fff5aff6f3f3c91ac5f5">Hitbox::getHitboxes()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a7c03e338a28288bf21b346d4433d054b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c03e338a28288bf21b346d4433d054b">&#9670;&nbsp;</a></span>setPosHitboxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,12 +402,42 @@ Data Fields</h2></td></tr>
         <tr>
           <td class="memname">void Hitboxed::setPosHitboxes </td>
           <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The new position of the hitboxes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc34314aca5ecb73909a81b1116915c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc34314aca5ecb73909a81b1116915c0">&#9670;&nbsp;</a></span>setScaleHitboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hitboxed::setScaleHitboxes </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The new scale of the hitboxes </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -237,12 +447,21 @@ Data Fields</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string Hitboxed::activeHitbox</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<p>The label of the current hitbox </p>
 
 </div>
 </div>
@@ -251,12 +470,21 @@ Data Fields</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::map&lt;std::string, std::vector&lt;<a class="el" href="class_hitbox.html">Hitbox</a>&gt; &gt; Hitboxed::hitboxes</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<p>A map containing all the hitboxes of the object </p>
 
 </div>
 </div>

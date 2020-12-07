@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addclickable_149',['addClickable',['../class_game.html#a6d75fb12353ae99d53860434b5504e84',1,'Game']]],
-  ['addscene_150',['addScene',['../class_game.html#ac7f4be1ef3064a328dcb4d3ab2332c85',1,'Game']]]
+  ['addscene_176',['addScene',['../class_game.html#aee09cfc57c5325c35fbcef103e4ea98d',1,'Game']]],
+  ['arehitboxesflipped_177',['areHitboxesFlipped',['../class_hitboxed.html#a3863ec7da0becb759069d7a6f5203da1',1,'Hitboxed']]]
 ];

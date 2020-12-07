@@ -2,75 +2,57 @@
 
 bool Clickable::isClicked()
 {
-	if (std::find(clickTypes.begin(), clickTypes.end(), ClickType::OVER) == clickTypes.end())
+	if (!isHovered())  return false;
+	bool res = false;
+	if ((std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::LEFT) != mouseButtons.end()
+		&& ev->mouseButton.button == sf::Mouse::Left)
+		|| (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::RIGHT) != mouseButtons.end()
+			&& ev->mouseButton.button == sf::Mouse::Right)
+		|| (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::MIDDLE) != mouseButtons.end()
+			&& ev->mouseButton.button == sf::Mouse::Middle))
 	{
-		bool ok = false;
-		if (ev->type == sf::Event::MouseButtonReleased)
+		if (ev->type == sf::Event::MouseButtonReleased
+			&& std::find(clickTypes.begin(), clickTypes.end(), ClickType::ONRELEASE) != clickTypes.end())
 		{
-			if (std::find(clickTypes.begin(), clickTypes.end(), ClickType::ONRELEASE) != clickTypes.end())
-			{
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::LEFT) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Left)
-						ok = true;
-				}
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::RIGHT) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Right)
-						ok = true;
-				}
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::MIDDLE) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Middle)
-						ok = true;
-				}
-			}
+			res = true;
 		}
-		if (ev->type == sf::Event::MouseButtonPressed)
+		else if (ev->type == sf::Event::MouseButtonPressed
+			&& std::find(clickTypes.begin(), clickTypes.end(), ClickType::ONDOWN) != clickTypes.end())
 		{
-			if (std::find(clickTypes.begin(), clickTypes.end(), ClickType::ONDOWN) != clickTypes.end())
-			{
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::LEFT) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Left)
-						ok = true;
-				}
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::RIGHT) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Right)
-						ok = true;
-				}
-				if (std::find(mouseButtons.begin(), mouseButtons.end(), MouseButton::MIDDLE) != mouseButtons.end())
-				{
-					if (ev->mouseButton.button == sf::Mouse::Middle)
-						ok = true;
-				}
-			}
+			res = true;
 		}
-		if (!ok) return false;
 	}
+	return res;
+}
+
+bool Clickable::isHovered()
+{
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
-	class Tmp : public Hitboxed {};
-	Tmp tmp;
+	/*CursorHitbox tmp;
 	tmp.hitboxes.emplace("tmp", std::vector<Hitbox>());
 	tmp.hitboxes["tmp"].push_back(Hitbox());
 	tmp.setActiveHitbox("tmp");
 	Hitbox& tmpHitbox = tmp.hitboxes["tmp"][0];
-	tmpHitbox.setPos(sf::Vector2f(mousePos.x - 1, mousePos.y - 1));
-	tmpHitbox.setSize(sf::Vector2f(2, 2));
-	tmpHitbox.setType("hurtbox");
+	tmpHitbox.setPos(sf::Vector2f(static_cast<float>(mousePos.x - 1), static_cast<float>(mousePos.y - 1)));
+	tmpHitbox.setSize(sf::Vector2f(2.F, 2.F));
+	tmpHitbox.setType("hurtbox");*/
 
-	return Hitbox::doesHit(&tmp, this);
+	return Hitbox::isPointInHitbox(static_cast<sf::Vector2f>(mousePos), this);
 }
 
-void Clickable::setWindow(sf::RenderWindow* window)
+void Clickable::setWindow(sf::RenderWindow * gameWindow)
 {
-	this->window = window;
+	window = gameWindow;
 }
 
-void Clickable::setEvent(sf::Event* ev)
+sf::RenderWindow& Clickable::getWindow()
 {
-	this->ev = ev;
+	return static_cast<sf::RenderWindow&>(*window);
+}
+
+void Clickable::setEvent(sf::Event * gameEvent)
+{
+	ev = gameEvent;
 }
 
 std::vector<ClickType>& Clickable::getClickTypes()

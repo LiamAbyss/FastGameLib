@@ -11,9 +11,9 @@
 #include "ResourceManager.h"
 #include "TransparentWindow.h"
 #include "Camera.h"
+#include "Scene.h"
 
 class Scene;
-#include "Scene.h"
 
 /** 
  * Global container for the game.
@@ -21,20 +21,12 @@ class Scene;
 class Game
 {
 private:
-	//SCENES
 	/** 
 	 * \private
 	 * Contains all the scenes of the game.
 	 * \see Scene
 	 */
 	std::map<std::string, std::shared_ptr<Scene>> scenes;
-
-	/** 
-	 * \private
-	 * Contains all the clickable objects of the current scene.
-	 * \see Clickable
-	 */
-	std::vector<std::shared_ptr<Clickable>> clickables;
 
 	/** 
 	 * \private
@@ -90,15 +82,19 @@ private:
 	 */
 	std::string currentScene;
 
-	/** 
+	/**
+	 * \private
+	 * Camera managing the view of the game.
+	 */
+	Camera cam;
+
+	/**
 	 * \private
 	 * SFML event passed to Scene::update().
 	 */
 	sf::Event ev;
 
 public:
-
-	Camera cam;
 
 	/**
 	 * \public
@@ -107,7 +103,7 @@ public:
 	 * \param mode Dimensions of the main window.
 	 * \param style Style of the main window.
 	 */
-	Game(std::string title, sf::VideoMode mode, sf::Uint32 style = 7U);
+	Game(const std::string& title, const sf::VideoMode& mode, const sf::Uint32& style = 7U);
 
 	/**
 	 * \public
@@ -116,7 +112,7 @@ public:
 	 * \param scene A pointer on the scene allocated with \c new.
 	 * \see Scene
 	 */
-	void addScene(std::string label, Scene* scene);
+	void addScene(const std::string& label, Scene* scene);
 
 	/**
 	 * \public
@@ -131,22 +127,7 @@ public:
 	 * \param label Label of the scene.
 	 * \see Scene 
 	 */
-	void setCurrentScene(std::string label);
-
-	/**
-	 * \public
-	 * Adds a clickable object on the scene.
-	 * \param clickable A pointer to the clickable allocated with \c new.
-	 * \see Clickable
-	 */
-	void addClickable(Clickable* clickable);
-
-	/**
-	 * \public
-	 * \return A reference to the map Game::clickables.
-	 * \see Clickable
-	 */
-	std::vector<std::shared_ptr<Clickable>>& getClickables();
+	void setCurrentScene(const std::string& label);
 
 	/**
 	 * \public
@@ -165,7 +146,7 @@ public:
 	 * \public
 	 * \return A reference to the dimensions of the main window.
 	 */
-	sf::VideoMode getVideoMode();
+	sf::VideoMode getVideoMode() const;
 
 	/**
 	 * \public
@@ -177,7 +158,7 @@ public:
 	 * \public
 	 * \return The maximum framerate of the game.
 	 */
-	unsigned short getFramerate();
+	unsigned short getFramerate() const;
 
 	/**
 	 * \public
@@ -196,14 +177,27 @@ public:
 	 * Sets the shape of the window according to an image with transparent parts.
 	 * \param image The image to shape the window.
 	 */
-	bool setWShape(const sf::Image& image);
+	bool setWShape(const sf::Image& image) const;
 
 	/**
 	 * \public
 	 * Sets the transparency of the window.
 	 * \param alpha the opacity (0-255).
 	 */
-	bool setWTransparency(unsigned char alpha);
+	bool setWTransparency(unsigned char alpha) const;
+
+	/**
+	 * \public
+	 * \return A reference on the game camera.
+	 * \see Camera 
+	 */
+	Camera& getCamera();
+
+	/**
+	 * \public
+	 * \return A reference on the game event. 
+	 */
+	sf::Event& getEvent();
 };
 
 #endif // !INCLUDE_GAME

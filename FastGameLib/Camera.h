@@ -15,10 +15,34 @@ private:
 	float intensity = 0;
 	sf::Vector2f lastCenter;
 	sf::Vector2f newCenter;
+	sf::RenderWindow* window = nullptr;
 
 public:
-	sf::RenderWindow* window;
-	void shake(float intensity, sf::Time time);
+
+	/**
+	 * \public
+	 * \return A reference on the game window
+	 */
+	sf::RenderWindow& getWindow();
+
+	/**
+	 * \public
+	 * \param w The game window 
+	 */
+	void setWindow(sf::RenderWindow* w);
+
+	/**
+	 * \public
+	 * Shakes the camera according to the given parameters
+	 * \param shakeIntensity The intensity of the shaking
+	 * \param shakeTime The duration of the shaking
+	 */
+	void shake(float shakeIntensity, sf::Time shakeTime);
+
+	/**
+	 * \public
+	 * \param dt The time since the last frame
+	 */
 	void update(sf::Time dt);
 };
 
